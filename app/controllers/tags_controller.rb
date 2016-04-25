@@ -9,27 +9,31 @@ class TagsController < ApplicationController
     else
         @selected_tag = Tag.find(params[:id])
     end
-    if session[:tags] == nil
-      session[:tags] = []
 
+    @selected_tag = Tag.find(params[:id])
+    if params[:id] == nil
+      params[:id] = []
     end
-    session[:tags] << @selected_tag.id
-    @next_tags = @selected_tag.children
+
+    @previous_tags = params[:tags]
+    @previous_tags.push(@selected_tag.id)
+
+    @next_tags = { children: @selected_tag.children, tags: @previous_tags }
 
     # Drink choosing logic
     @drink_ids = []
-    if @next_tags.length === 0
+    if @next_tags[:children].length === 0
       @drink_choices = []
       @bars_drinks = Drink.all
       @bars_drinks.each do |drink|
         @drink_tags_array = drink.tags.pluck(:id)
-        @in_common = @drink_tags_array & session[:tags]
+        @in_common = @drink_tags_array & @previous_tags.map!{|num| num.to_i}
 
-        if @in_common.length >= session[:tags].length - 1
+        if @in_common.length >= @previous_tags.length - 1
           @drink_ids << drink.id
         end
       end
-      session[:tags].clear
+      # params[:tags] = []
 
       redirect_to :action => "choose", :controller => "drinks", :id => @drink_ids
     else

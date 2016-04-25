@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :tags, except: [:new, :edit]
 
   root 'bars#index'
-
+  get 'users/show/:id' => 'users#show'
 end

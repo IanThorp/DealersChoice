@@ -175,7 +175,8 @@ cocktails = {
 
 cocktails.each do |key, value|
   drink = Drink.create(name: value[:name], description: value[:description], bar_id: 1)
-  drink.reviews.create(user_id: rand(1..100), description: Faker::Hacker.say_something_smart)
+  drink.reviews.create(user_id: rand(1..100), description: "Wow, this drink was the best one I have ever had. I wish I could get another one.")
+  drink.reviews.create(user_id: rand(1..100), description: "I can't believe I have never tried this drink before. I have been missing out.")
   value[:tags].each {|tag| DrinksTag.create(drink_id: drink.id, tag_id: tag)}
 end
 
