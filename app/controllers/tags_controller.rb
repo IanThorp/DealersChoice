@@ -2,12 +2,15 @@ class TagsController < ApplicationController
 
   def index
     # tag choosing logic
+    # update logic
     if !params[:id]
       @tag1 = Tag.find(1)
+      p "WENT THROUGH THE LOOOOOOOP"
       @tag2 = Tag.find(36)
-      render json: [@tag1, @tag2]
+      return render json: [@tag1, @tag2]
+    else
+        @selected_tag = Tag.find(params[:id])
     end
-    @selected_tag = Tag.find(params[:id])
     if session[:tags] == nil
       session[:tags] = []
 
@@ -34,6 +37,14 @@ class TagsController < ApplicationController
     else
       render json: @next_tags
     end
+  end
+
+  def new
+  end
+
+  def show
+    @tag = Tag.find(params[:id])
+    render json: @tag
   end
 
 
