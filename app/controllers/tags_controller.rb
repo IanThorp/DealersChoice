@@ -14,11 +14,18 @@ class TagsController < ApplicationController
     if params[:id] == nil
       params[:id] = []
     end
-
-    @previous_tags = params[:tags]
-    @previous_tags.push(@selected_tag.id)
-
+    if params[:tags]
+      @previous_tags = params[:tags]
+      @previous_tags.push(@selected_tag.id)
+    else
+      @previous_tags = []
+      @previous_tags.push(@selected_tag.id)
+    end
+    if @previous_tags.length > 0
     @next_tags = { children: @selected_tag.children, tags: @previous_tags }
+    else
+      @next_tags = { children: @selected_tag.children}
+    end
 
     # Drink choosing logic
     @drink_ids = []

@@ -3,6 +3,8 @@
 Dealer's Choice is an Iphone app for the indecisive. Users can look at a bar's menu, or work through a decision tree to find their favorite drink.
 Reviews and rating for each drink are tracked and displayed.
 
+This repo is specifically for the API back end. The client side React Native code is located [here](https://github.com/frankiebee/react-nativeDealersChoice)
+
 ## Installation Instructions
 
 * Use rails 4.2.6
@@ -10,7 +12,7 @@ Reviews and rating for each drink are tracked and displayed.
 
 ##Deployment Details
 
-TBD
+Dealers-Choice.herokuapp.com
 
 ## Schema
 
