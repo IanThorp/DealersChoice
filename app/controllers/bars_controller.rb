@@ -16,7 +16,15 @@ class BarsController < ApplicationController
     render json: search
   end
 
+  # must fetch new Yelp params on new view/page to get access to search bar feature
+  #scrapped and is now stretch goal
+  def searchBar
+
+  end
+
   def show
 
   end
+
+
 end

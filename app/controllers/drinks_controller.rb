@@ -1,4 +1,4 @@
-class DrinksController < ApplicationController
+  class DrinksController < ApplicationController
 
   def choose
     # Need to recieve params[:choice_id](drink selected id).
