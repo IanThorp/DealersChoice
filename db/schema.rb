@@ -18,25 +18,17 @@ ActiveRecord::Schema.define(version: 20160424191553) do
 
   create_table "bars", force: :cascade do |t|
     t.string   "name"
-    t.integer  "reviewable_id"
-    t.string   "reviewable_type"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_index "bars", ["reviewable_type", "reviewable_id"], name: "index_bars_on_reviewable_type_and_reviewable_id", using: :btree
 
   create_table "drinks", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.integer  "bar_id"
-    t.integer  "reviewable_id"
-    t.string   "reviewable_type"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
-
-  add_index "drinks", ["reviewable_type", "reviewable_id"], name: "index_drinks_on_reviewable_type_and_reviewable_id", using: :btree
 
   create_table "drinks_tags", force: :cascade do |t|
     t.integer  "tag_id"
@@ -57,9 +49,11 @@ ActiveRecord::Schema.define(version: 20160424191553) do
     t.integer  "reviewable_id"
     t.string   "reviewable_type"
     t.integer  "user_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
+
+  add_index "reviews", ["reviewable_type", "reviewable_id"], name: "index_reviews_on_reviewable_type_and_reviewable_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"

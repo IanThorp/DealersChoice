@@ -1,28 +1,24 @@
   class DrinksController < ApplicationController
 
   def choose
-    # Need to recieve params[:choice_id](drink selected id).
 
-    if params[:drink_ids] == nil
-      params[:drink_ids] = params[:id]
-    end
-    # params[:drink_ids]
-    p 'HERE IT IS RIGHT ABOVE AND BELOW'
-    p params[:id]
     if params[:choice_id]
       # If drink is chosen, return json of the drink
+      if params[:choice_id] == "0"
+        # If no drink is chosen, send back choice_id of zero
+        redirect_to root_path
+      end
       @drink = Drink.find(params[:choice_id])
       params[:choice_id].clear
       redirect_to bar_drink_path(id: @drink.id, bar_id: @drink.bar_id)
-    elsif params[:drink_ids].length > 0
-      # if drink is not chosen, return next drink
-      @drink_id = params[:drink_ids].shuffle!.pop
-      @drink = Drink.find(@drink_id)
-      render json: {current_drink: @drink, drink_ids: params[:drink_ids]}
-    else
-      # Need something for edge case if they don't like any drinks
-      redirect_to root_path
     end
+    @drink_ids = params[:id]
+    @drink_ids.shuffle!
+    @drink_objs = []
+    @drink_ids.each do |drink_id|
+      @drink_objs << Drink.find(drink_id)
+    end
+    render json: {current_drink: @drink_objs}
   end
 
   def index
