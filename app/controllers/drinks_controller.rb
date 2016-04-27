@@ -12,10 +12,10 @@
       params[:choice_id].clear
       redirect_to bar_drink_path(id: @drink.id, bar_id: @drink.bar_id)
     end
-    @drink_ids = params[:id]
-    @drink_ids.shuffle!
-    @drink_objs = []
-    @drink_ids.each do |drink_id|
+      @drink_ids = params[:id]
+      @drink_ids.shuffle!
+      @drink_objs = []
+      @drink_ids.each do |drink_id|
       @drink_objs << Drink.find(drink_id)
     end
     render json: {current_drink: @drink_objs}
