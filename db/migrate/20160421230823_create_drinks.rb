@@ -4,7 +4,7 @@ class CreateDrinks < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.integer :bar_id
-
+      t.string :image_url
       t.timestamps null: false
     end
   end
