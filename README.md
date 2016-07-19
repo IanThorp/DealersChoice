@@ -20,11 +20,11 @@ This repo is specifically for the API back end. The client side React Native cod
 
 #Interface
 
-![BarIndex](http://imgur.com/GAoSsid "Bar Index")
+![BarIndex](http://imgur.com/GAoSsid.png "Bar Index")
 
-![DrinkIndex](http://imgur.com/O0hHgNb "Drink Index")
+![DrinkIndex](http://imgur.com/O0hHgNb.png "Drink Index")
 
-![DecisionTree](http://imgur.com/6GBISoc "Decision Tree")
+![DecisionTree](http://imgur.com/6GBISoc.png "Decision Tree")
 
 ## License
 MIT License
