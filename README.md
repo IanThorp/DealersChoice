@@ -12,7 +12,7 @@ This repo is specifically for the API back end. The client side React Native cod
 
 ##Deployment Details
 
-[Dealers-Choice.herokuapp.com](http://www.Dealers-Choice.herokuapp.com)
+[Dealers-Choice.herokuapp.com](https://dealers-choice.herokuapp.com/)
 
 ## Schema
 
