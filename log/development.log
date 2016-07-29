@@ -34959,3 +34959,365 @@ If you want to use the new default:
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
   [1m[35mSQL (0.1ms)[0m  INSERT INTO "bars" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Tradition"], ["created_at", "2016-04-29 00:15:30.136773"], ["updated_at", "2016-04-29 00:15:30.136773"]]
   [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+DEPRECATION WARNING: [Devise] config.email_regexp will have a new default on Devise 4.1
+To keep the current behavior please set in your config/initializers/devise.rb the following:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@([^@\s]+\.)+[^@\W]+\z/
+  end
+
+If you want to use the new default:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  end
+. (called from block in tsort_each at /Users/Sharon/.rbenv/versions/2.2.1/lib/ruby/2.2.0/tsort.rb:226)
+
+
+Started GET "/" for ::1 at 2016-04-28 17:16:52 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BarsController#index as */*
+Completed 200 OK in 2278ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-28 17:16:55 -0700
+Processing by BarsController#index as */*
+Completed 200 OK in 2449ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/bars/1/drinks" for ::1 at 2016-04-28 17:17:00 -0700
+Processing by DrinksController#index as */*
+  Parameters: {"bar_id"=>"1"}
+  [1m[35mBar Load (1.3ms)[0m  SELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mDrink Load (0.4ms)[0m  [1mSELECT "drinks".* FROM "drinks" WHERE "drinks"."bar_id" = $1[0m  [["bar_id", 1]]
+Completed 200 OK in 60ms (Views: 19.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/bars/1/drinks/1" for ::1 at 2016-04-28 17:17:01 -0700
+Processing by DrinksController#show as */*
+  Parameters: {"bar_id"=>"1", "id"=>"1"}
+  [1m[35mDrink Load (0.4ms)[0m  SELECT  "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 1], ["reviewable_type", "Drink"]]
+Completed 200 OK in 18ms (Views: 7.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/tags?id=0" for ::1 at 2016-04-28 17:17:06 -0700
+Processing by TagsController#index as */*
+  Parameters: {"id"=>"0"}
+  [1m[35mTag Load (3.9ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 36]]
+Completed 200 OK in 33ms (Views: 1.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/tags?id=36" for ::1 at 2016-04-28 17:17:06 -0700
+Processing by TagsController#index as */*
+  Parameters: {"id"=>"36"}
+  [1m[35mTag Load (0.3ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 36]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", "36"]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."child_id" WHERE "families"."parent_id" = $1  [["parent_id", 36]]
+Completed 200 OK in 22ms (Views: 0.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/tags?id=15" for ::1 at 2016-04-28 17:17:08 -0700
+Processing by TagsController#index as */*
+  Parameters: {"id"=>"15"}
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", "15"]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."child_id" WHERE "families"."parent_id" = $1[0m  [["parent_id", 15]]
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tags?id=21" for ::1 at 2016-04-28 17:17:09 -0700
+Processing by TagsController#index as */*
+  Parameters: {"id"=>"21"}
+  [1m[35mTag Load (0.5ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", "21"]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."child_id" WHERE "families"."parent_id" = $1  [["parent_id", 21]]
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tags?id=25" for ::1 at 2016-04-28 17:17:09 -0700
+Processing by TagsController#index as */*
+  Parameters: {"id"=>"25"}
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 25]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", "25"]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."child_id" WHERE "families"."parent_id" = $1[0m  [["parent_id", 25]]
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tags?id=33" for ::1 at 2016-04-28 17:17:10 -0700
+Processing by TagsController#index as */*
+  Parameters: {"id"=>"33"}
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 33]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", "33"]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."child_id" WHERE "families"."parent_id" = $1  [["parent_id", 33]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."parent_id" WHERE "families"."child_id" = $1[0m  [["child_id", 33]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."parent_id" WHERE "families"."child_id" = $1  [["child_id", 25]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."parent_id" WHERE "families"."child_id" = $1[0m  [["child_id", 21]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."parent_id" WHERE "families"."child_id" = $1  [["child_id", 15]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."parent_id" WHERE "families"."child_id" = $1[0m  [["child_id", 36]]
+  [1m[35mDrink Load (0.3ms)[0m  SELECT "drinks".* FROM "drinks"
+  [1m[36m (0.5ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 3]]
+  [1m[35m (0.3ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 4]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 5]]
+  [1m[35m (0.4ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 7]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 8]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 9]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 10]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 11]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 12]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 13]]
+  [1m[35m (0.3ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 14]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 15]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 16]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 17]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 18]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 19]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 20]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 21]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 22]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 23]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 24]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 25]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 26]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 27]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 28]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 29]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 30]]
+Redirected to http://localhost:3000/drinks/choose?id%5B%5D=28&id%5B%5D=30
+Completed 302 Found in 63ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/drinks/choose?id%5B%5D=28&id%5B%5D=30" for ::1 at 2016-04-28 17:17:10 -0700
+Processing by DrinksController#choose as */*
+  Parameters: {"id"=>["28", "30"]}
+  [1m[36mDrink Load (0.2ms)[0m  [1mSELECT  "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  [1m[35mDrink Load (0.2ms)[0m  SELECT  "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT 1  [["id", 30]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bars/1/drinks" for ::1 at 2016-04-28 17:17:20 -0700
+Processing by DrinksController#index as */*
+  Parameters: {"bar_id"=>"1"}
+  [1m[36mBar Load (0.2ms)[0m  [1mSELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mDrink Load (0.3ms)[0m  SELECT "drinks".* FROM "drinks" WHERE "drinks"."bar_id" = $1  [["bar_id", 1]]
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bars/1/drinks/1" for ::1 at 2016-04-28 17:17:21 -0700
+Processing by DrinksController#show as */*
+  Parameters: {"bar_id"=>"1", "id"=>"1"}
+  [1m[36mDrink Load (0.3ms)[0m  [1mSELECT  "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2  [["reviewable_id", 1], ["reviewable_type", "Drink"]]
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tags?id=0" for ::1 at 2016-04-28 17:45:13 -0700
+Processing by TagsController#index as */*
+  Parameters: {"id"=>"0"}
+  [1m[36mTag Load (0.9ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 36]]
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tags?id=1" for ::1 at 2016-04-28 17:45:26 -0700
+Processing by TagsController#index as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."child_id" WHERE "families"."parent_id" = $1[0m  [["parent_id", 1]]
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tags?id=2" for ::1 at 2016-04-28 17:45:28 -0700
+Processing by TagsController#index as */*
+  Parameters: {"id"=>"2"}
+  [1m[35mTag Load (0.3ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."child_id" WHERE "families"."parent_id" = $1  [["parent_id", 2]]
+Completed 200 OK in 9ms (Views: 1.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tags?id=4" for ::1 at 2016-04-28 17:45:31 -0700
+Processing by TagsController#index as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."child_id" WHERE "families"."parent_id" = $1[0m  [["parent_id", 4]]
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tags?id=6" for ::1 at 2016-04-28 17:45:37 -0700
+Processing by TagsController#index as */*
+  Parameters: {"id"=>"6"}
+  [1m[35mTag Load (0.3ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."child_id" WHERE "families"."parent_id" = $1  [["parent_id", 6]]
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."parent_id" WHERE "families"."child_id" = $1[0m  [["child_id", 6]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."parent_id" WHERE "families"."child_id" = $1  [["child_id", 4]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."parent_id" WHERE "families"."child_id" = $1[0m  [["child_id", 2]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."parent_id" WHERE "families"."child_id" = $1  [["child_id", 1]]
+  [1m[36mDrink Load (0.4ms)[0m  [1mSELECT "drinks".* FROM "drinks"[0m
+  [1m[35m (0.3ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 4]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 5]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 6]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 7]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 8]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 9]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 10]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 11]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 12]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 14]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 15]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 16]]
+  [1m[35m (0.3ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 17]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 18]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 19]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 20]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 21]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 22]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 23]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 24]]
+  [1m[35m (0.3ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 25]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 26]]
+  [1m[35m (0.3ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 27]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 28]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 29]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 30]]
+Redirected to http://localhost:3000/drinks/choose?id%5B%5D=4&id%5B%5D=5&id%5B%5D=10&id%5B%5D=12&id%5B%5D=21
+Completed 302 Found in 67ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/drinks/choose?id%5B%5D=4&id%5B%5D=5&id%5B%5D=10&id%5B%5D=12&id%5B%5D=21" for ::1 at 2016-04-28 17:45:37 -0700
+Processing by DrinksController#choose as */*
+  Parameters: {"id"=>["4", "5", "10", "12", "21"]}
+  [1m[35mDrink Load (0.3ms)[0m  SELECT  "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mDrink Load (0.3ms)[0m  [1mSELECT  "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mDrink Load (0.2ms)[0m  SELECT  "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mDrink Load (0.1ms)[0m  [1mSELECT  "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35mDrink Load (0.1ms)[0m  SELECT  "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 7ms (Views: 1.9ms | ActiveRecord: 1.0ms)
+DEPRECATION WARNING: [Devise] config.email_regexp will have a new default on Devise 4.1
+To keep the current behavior please set in your config/initializers/devise.rb the following:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@([^@\s]+\.)+[^@\W]+\z/
+  end
+
+If you want to use the new default:
+
+  Devise.setup do |config|
+    config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  end
+. (called from block in tsort_each at /Users/Sharon/.rbenv/versions/2.2.1/lib/ruby/2.2.0/tsort.rb:226)
+
+
+Started GET "/" for ::1 at 2016-07-25 13:56:24 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BarsController#index as */*
+Completed 200 OK in 2982ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tags?id=0" for ::1 at 2016-07-25 13:57:03 -0700
+Processing by TagsController#index as */*
+  Parameters: {"id"=>"0"}
+  [1m[35mTag Load (5.7ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.8ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 36]]
+Completed 200 OK in 189ms (Views: 18.1ms | ActiveRecord: 24.4ms)
+
+
+Started GET "/bars/1/drinks" for ::1 at 2016-07-25 13:57:25 -0700
+Processing by DrinksController#index as */*
+  Parameters: {"bar_id"=>"1"}
+  [1m[35mBar Load (13.0ms)[0m  SELECT  "bars".* FROM "bars" WHERE "bars"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mDrink Load (8.4ms)[0m  [1mSELECT "drinks".* FROM "drinks" WHERE "drinks"."bar_id" = $1[0m  [["bar_id", 1]]
+Completed 200 OK in 74ms (Views: 16.0ms | ActiveRecord: 30.8ms)
+
+
+Started GET "/tags?id=0" for ::1 at 2016-07-25 13:57:37 -0700
+Processing by TagsController#index as */*
+  Parameters: {"id"=>"0"}
+  [1m[35mTag Load (0.8ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 36]]
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tags?id=1" for ::1 at 2016-07-25 13:57:46 -0700
+Processing by TagsController#index as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTag Load (7.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."child_id" WHERE "families"."parent_id" = $1  [["parent_id", 1]]
+Completed 200 OK in 28ms (Views: 1.1ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/tags?id=2" for ::1 at 2016-07-25 13:57:54 -0700
+Processing by TagsController#index as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mTag Load (0.9ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."child_id" WHERE "families"."parent_id" = $1[0m  [["parent_id", 2]]
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tags?id=3" for ::1 at 2016-07-25 13:58:06 -0700
+Processing by TagsController#index as */*
+  Parameters: {"id"=>"3"}
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."child_id" WHERE "families"."parent_id" = $1  [["parent_id", 3]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."parent_id" WHERE "families"."child_id" = $1[0m  [["child_id", 3]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."parent_id" WHERE "families"."child_id" = $1  [["child_id", 2]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "families" ON "tags"."id" = "families"."parent_id" WHERE "families"."child_id" = $1[0m  [["child_id", 1]]
+  [1m[35mDrink Load (0.3ms)[0m  SELECT "drinks".* FROM "drinks"
+  [1m[36m (2.1ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 3]]
+  [1m[35m (0.3ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 4]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 5]]
+  [1m[35m (0.3ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 7]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 8]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 9]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 10]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 11]]
+  [1m[35m (0.5ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 14]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 15]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 16]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 17]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 18]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 19]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 20]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 21]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 22]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 23]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 24]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 25]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 26]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 27]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 28]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1[0m  [["drink_id", 29]]
+  [1m[35m (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "drinks_tags" ON "tags"."id" = "drinks_tags"."tag_id" WHERE "drinks_tags"."drink_id" = $1  [["drink_id", 30]]
+Redirected to http://localhost:3000/drinks/choose?id%5B%5D=4&id%5B%5D=5&id%5B%5D=7&id%5B%5D=10&id%5B%5D=12&id%5B%5D=21
+Completed 302 Found in 74ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/drinks/choose?id%5B%5D=4&id%5B%5D=5&id%5B%5D=7&id%5B%5D=10&id%5B%5D=12&id%5B%5D=21" for ::1 at 2016-07-25 13:58:06 -0700
+Processing by DrinksController#choose as */*
+  Parameters: {"id"=>["4", "5", "7", "10", "12", "21"]}
+  [1m[36mDrink Load (1.8ms)[0m  [1mSELECT  "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mDrink Load (0.2ms)[0m  SELECT  "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mDrink Load (0.3ms)[0m  [1mSELECT  "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35mDrink Load (0.3ms)[0m  SELECT  "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mDrink Load (0.2ms)[0m  [1mSELECT  "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mDrink Load (0.3ms)[0m  SELECT  "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 11ms (Views: 2.9ms | ActiveRecord: 3.1ms)
