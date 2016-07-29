@@ -115,55 +115,55 @@ cocktails = {
 
     Sazerac: { tags: [ 4, 12 ,1 , 2], description: "In the same family as the Old Fashioned. This keeps the powerful whiskey kick, and adds a touch of anise and citrus nose.", name: "Sazerac", image_url: "http://cdn.skim.gs/images/op5cuu7g9kpscj62ehjf/mad-men-20-classic-cocktails-that-will-never-go-out-of-style-sazerac"} ,
 
-    Clover_Club: { tags: [29 ,20 ,22, 36, 15], description: "Raspberry, Sugar, Gin, Lemon, Egg white", name: "Clover Club", image_url: "http://liquor.s3.amazonaws.com/wp-content/uploads/2014/10/Nolet-Cover-Club.jpg"} ,
+    Clover_Club: { tags: [29 ,20 ,22, 36, 15], description: "Nice balance of citrusy and sweet. The egg white gives it a silky texture. Ingredients: Raspberry, Sugar, Gin, Lemon, Egg white", name: "Clover Club", image_url: "http://liquor.s3.amazonaws.com/wp-content/uploads/2014/10/Nolet-Cover-Club.jpg"} ,
 
-    Williams: { tags: [3 ,2 ,1 ,12 ], description: "Scotch, Yellow Chartreuse, Scotch, Dry Vermouth, Scotch, Orange Bitters, Scotch", name: "Williams", image_url: "http://giuseppegallo.co.uk/wp-content/uploads/2011/02/medium_Cure-Cocktail12.jpg"} ,
+    Williams: { tags: [3 ,2 ,1 ,12 ], description: "A touch of smoke with a good kick of whiskey. What else could you ask for. Ingredients: Scotch, Yellow Chartreuse, Dry Vermouth, Orange Bitters", name: "Williams", image_url: "http://giuseppegallo.co.uk/wp-content/uploads/2011/02/medium_Cure-Cocktail12.jpg"} ,
 
-    Derby: { tags: [ 21, 36, 23, 15], description: "Sweet Vermouth, Bourbon, Lime Juice, Orange Curacao", name: "Derby", image_url: "http://punchdrink.com/wp-content/uploads/2015/03/brown-derby.jpg"} ,
+    Derby: { tags: [ 21, 36, 23, 15], description: "Dark yet refreshing. Balanced and smooth. Ingredients: Sweet Vermouth, Bourbon, Lime Juice, Orange Curacao", name: "Derby", image_url: "http://punchdrink.com/wp-content/uploads/2015/03/brown-derby.jpg"} ,
 
-    Monte_Cassino: { tags: [ 7, 3, 36, 14], description: "Yellow Chartruese, Benedictine, Lemon Juice, Rye Whiskey", name: "Monte Cassino", image_url: "http://liquor.s3.amazonaws.com/wp-content/uploads/2011/03/cinquecento1.jpg"} ,
+    Monte_Cassino: { tags: [ 7, 3, 36, 14], description: "A touch of herbal complexity, with a nice refreshing body. Ingredients: Yellow Chartruese, Benedictine, Lemon Juice, Rye Whiskey", name: "Monte Cassino", image_url: "http://liquor.s3.amazonaws.com/wp-content/uploads/2011/03/cinquecento1.jpg"} ,
 
-    Monte_Carlo: { tags: [ 4, 12, 1, 2], description: "Bourbon, Benedictine, Angostura Bitters", name: "Monte Carlo", image_url: "http://i1074.photobucket.com/albums/w411/frederix3/montecarlo283.jpg"} ,
+    Monte_Carlo: { tags: [ 4, 12, 1, 2], description: "Dark and Robust. Lives in the Manhattan family, but a touch more of a citrus kick. Ingredients: Bourbon, Benedictine, Angostura Bitters", name: "Monte Carlo", image_url: "http://i1074.photobucket.com/albums/w411/frederix3/montecarlo283.jpg"} ,
 
-    Last_Word: { tags: [36 , 14, 15, 18], description: "Gin, Green Chartreuse, Lime Juice, Luxardo", name: "Last Word", image_url: "http://punchdrink.com/wp-content/uploads/2013/09/Last-Word.jpg"} ,
+    Last_Word: { tags: [36 , 14, 15, 18], description: "Complex, Citrusy, and a touch of sweetness. Ingredients: Gin, Green Chartreuse, Lime Juice, Luxardo", name: "Last Word", image_url: "http://punchdrink.com/wp-content/uploads/2013/09/Last-Word.jpg"} ,
 
-    Martini: { tags: [ 1, 5, 4, 2], description: "Gin, Dry Vermouth", name: "Martini", image_url: "https://drinkstraightup.files.wordpress.com/2014/03/shamrock-cocktail-3.jpg"} ,
+    Martini: { tags: [ 1, 5, 4, 2], description: "Simple and classic. Option to make it dirty. Ingredients: Gin, Dry Vermouth", name: "Martini", image_url: "https://drinkstraightup.files.wordpress.com/2014/03/shamrock-cocktail-3.jpg"} ,
 
-    Zim_Zala_Bim: { tags: [ 1, 7, 8], description: "Reposado Tequila, Regan's Orange Bitters, Yellow Chartreuse, Sugar", name: "Zim Zala Bim", image_url: "https://i2.wp.com/farm3.static.flickr.com/2411/2230667706_ecaf71667c.jpg"} ,
+    Zim_Zala_Bim: { tags: [ 1, 7, 8], description: "A big punch of Reposoda tequila backed up with a heavy pour of orange bitters. Ingredients: Reposado Tequila, Regan's Orange Bitters, Yellow Chartreuse, Sugar", name: "Zim Zala Bim", image_url: "https://i2.wp.com/farm3.static.flickr.com/2411/2230667706_ecaf71667c.jpg"} ,
 
-    Purgatory: { tags: [ 1, 7, 8, 12], description: "Rye Whiskey, Green Chartreuse, Benedictine", name: "Purgatory", image_url: "http://images1.villagevoice.com/imager/u/blog/8067376/archer-cocktail-adam-robb.jpg"} ,
+    Purgatory: { tags: [ 1, 7, 8, 12], description: "Herbal and complex with a huge Rye Whiskey kick. Ingredients: Rye Whiskey, Green Chartreuse, Benedictine", name: "Purgatory", image_url: "http://images1.villagevoice.com/imager/u/blog/8067376/archer-cocktail-adam-robb.jpg"} ,
 
-    Basil_Gimlet: { tags: [ 20, 23, 36, 15], description: "Gin, Basil, Lime Juice, Sugar", name: "Basil Gimlet", image_url: "http://saltandwind.com/media/_versions/recipes/150210-cucumber-basil-gimlet_large.jpg"} ,
+    Basil_Gimlet: { tags: [ 20, 23, 36, 15], description: "Herbal and refreshing. This is a crowd favorite. Ingredients: Gin, Basil, Lime Juice, Sugar", name: "Basil Gimlet", image_url: "http://saltandwind.com/media/_versions/recipes/150210-cucumber-basil-gimlet_large.jpg"} ,
 
-    Orange_Whip: { tags: [36 , 15, 22 ,28, 20] , description: "Gin, Egg Whites, Orange Curacao, Orange Juice, Sugar", name: "Orange Whip", url: "https://s-media-cache-ak0.pinimg.com/736x/00/32/05/0032059b5e187bc63204d4d7069012d4.jpg"},
+    Orange_Whip: { tags: [36 , 15, 22 ,28, 20] , description: "Tastes just like an orange creamsicle. Ingredients: Gin, Egg Whites, Orange Curacao, Orange Juice, Sugar", name: "Orange Whip", image_url: "https://s-media-cache-ak0.pinimg.com/736x/00/32/05/0032059b5e187bc63204d4d7069012d4.jpg"},
 
-    Trinidad_Sour: { tags: [36 ,14, 17, 27], description: "Rye Whiskey, Angostura Bitters, Lemon Juice, Orgeat", name: "Trinidad Sour", url: "http://www.squirrelfarts.com/sfblog/wp-content/uploads/2012/07/rule37trinidadsour.jpg"} ,
+    Trinidad_Sour: { tags: [36 ,14, 17, 27], description: "Dark clove and all spice backed up with a bit of citrus and sweet. Nice and balanced. Ingredients: Rye Whiskey, Angostura Bitters, Lemon Juice, Orgeat", name: "Trinidad Sour", image_url: "http://www.squirrelfarts.com/sfblog/wp-content/uploads/2012/07/rule37trinidadsour.jpg"} ,
 
-    Negroni: { tags: [ 7, 1, 9, 11], description: "Gin, Campari, Sweet Vermouth", name: "Negroni", url: "http://graphics8.nytimes.com/images/2013/12/30/t-magazine/30spagliato-rowan1/30spagliato-rowan1-tmagArticle.jpg"} ,
+    Negroni: { tags: [ 7, 1, 9, 11], description: "Classic combination that creates a bitter and aggressive drink. Ingredients: Gin, Campari, Sweet Vermouth", name: "Negroni", image_url: "http://graphics8.nytimes.com/images/2013/12/30/t-magazine/30spagliato-rowan1/30spagliato-rowan1-tmagArticle.jpg"} ,
 
-    Americano: { tags: [36 ,2 , 17], description: "Campari, Sweet Vermouth, Soda Water", name: "Americano", url: "http://cf.ltkcdn.net/cocktails/images/std/178410-230x307-Americano-drink-IS.jpg"} ,
+    Americano: { tags: [36 ,2 , 17], description: "Refreshing but full flavored and bitter. Ingredients: Campari, Sweet Vermouth, Soda Water", name: "Americano", image_url: "http://cf.ltkcdn.net/cocktails/images/std/178410-230x307-Americano-drink-IS.jpg"} ,
 
-    Ephemeral: { tags: [ 7, 1, 8], description: "Gin, Dolin Blanc, St Germain, Celery Bitters", name: "Ephemeral", url: "http://3.bp.blogspot.com/-pILVIwU8Hfs/VbTk1vaqGYI/AAAAAAAAOMg/JBBzN8akTvQ/s1600/Ephemeral%2Bcocktail.jpg"} ,
+    Ephemeral: { tags: [ 7, 1, 8], description: "Celery and gin? You would not believe how good this is. Ingredients: Gin, Dolin Blanc, St Germain, Celery Bitters", name: "Ephemeral", image_url: "http://3.bp.blogspot.com/-pILVIwU8Hfs/VbTk1vaqGYI/AAAAAAAAOMg/JBBzN8akTvQ/s1600/Ephemeral%2Bcocktail.jpg"} ,
 
-    Martinez: { tags: [ 6, 1, 2], description: "Old Tom Gin, Sweet Vermouth, Luxardo, Angostura Bitters, Regan's Orange Bitters", name: "Martinez", url: "http://punchdrink.com/wp-content/uploads/2013/12/Martinez.jpg"} ,
+    Martinez: { tags: [ 6, 1, 2], description: "Has a darkness you don't normally find in gin. This all comes together to make an unforgettable cocktail. Ingredients: Old Tom Gin, Sweet Vermouth, Luxardo, Angostura Bitters, Regan's Orange Bitters", name: "Martinez", image_url: "http://punchdrink.com/wp-content/uploads/2013/12/Martinez.jpg"} ,
 
-    Cucumber_Cooler: { tags: [15, 20, 23, 30, 36], description: "Gin, Aperol, Lime Juice, Sugar, Soda Water", name: "Cucumber Cooler", url: "http://images.tastespotting.com/uploads/thumbnail/496534.jpg"} ,
+    Cucumber_Cooler: { tags: [15, 20, 23, 30, 36], description: "Refreshing with a cucumber kick and bubbly texture. Ingredients: Gin, Aperol, Lime Juice, Sugar, Soda Water", name: "Cucumber Cooler", image_url: "http://images.tastespotting.com/uploads/thumbnail/496534.jpg"} ,
 
-    Gin_Gin_Mule: { tags: [ 20, 36, 23, 15, 30], description: "Gin, Lime Juice, Sugar, Ginger Beer", name: "Gin Gin Mule", url: "http://summitsips.com/wp-content/uploads/2011/05/IMG_1901.jpg"} ,
+    Gin_Gin_Mule: { tags: [ 20, 36, 23, 15, 30], description: "Think a Moscow Mule, but more balanced and delicious mint. I know what you are thinking... It was 'mint' to be. Ingredients: Gin, Lime Juice, Sugar, Ginger Beer", name: "Gin Gin Mule", image_url: "http://summitsips.com/wp-content/uploads/2011/05/IMG_1901.jpg"} ,
 
-    Favela: { tags: [ 36, 2, 17], description: "Gin, Cocchi Americano, Campari, Falernum, Lemon Juice, Grapefruit Bitters", name: "Favela", url: "https://putneyfarm.files.wordpress.com/2013/03/plane6.jpg"} ,
+    Favela: { tags: [ 36, 2, 17], description: "Refreshing, sour, and bitter. This is a complex and interesting drink, packaged in a refreshing style. Ingredients: Gin, Cocchi Americano, Campari, Falernum, Lemon Juice, Grapefruit Bitters", name: "Favela", image_url: "https://putneyfarm.files.wordpress.com/2013/03/plane6.jpg"} ,
 
-    Royal_Hawaiian: { tags: [36 ,20, 22, 28, 15], description: "Gin, Pineapple Juice, Orgeat, Lemon Juice", name: "Royal Hawaiian", url: "https://s-media-cache-ak0.pinimg.com/236x/43/00/97/43009757583753eac9464f082c412c36.jpg"} ,
+    Royal_Hawaiian: { tags: [36 ,20, 22, 28, 15], description: "Light tropical and very little taste of alchohol. Ingredients: Gin, Pineapple Juice, Orgeat, Lemon Juice", name: "Royal Hawaiian", image_url: "https://s-media-cache-ak0.pinimg.com/236x/43/00/97/43009757583753eac9464f082c412c36.jpg"} ,
 
-    Penicillin: { tags: [ 36, 14, 19], description: "Scothc, Ginger, Honey, Lemon", name: "Penicillin", url: "http://www.snackish.com/wp-content/uploads/2012/03/penicillin_cocktail_recipe.jpg"} ,
+    Penicillin: { tags: [ 36, 14, 19], description: "Ginger Spice with a nice smokey kick. This is really interesting, but easy to drink one after another. Ingredients: Scothc, Ginger, Honey, Lemon", name: "Penicillin", image_url: "http://www.snackish.com/wp-content/uploads/2012/03/penicillin_cocktail_recipe.jpg"} ,
 
-    Unlucky_Italian: { tags: [36, 17, 14], description: "Cynar, Averna, Honey, Cinnamon, Lemon Juice, Egg White", name: "Unlucky Italian", url: "https://s-media-cache-ak0.pinimg.com/236x/ac/5e/92/ac5e92fa4e875d7c1c88563c22ba14e6.jpg"} ,
+    Unlucky_Italian: { tags: [36, 17, 14], description: "Dark and bitter, deep with a honey sweetness. The ultimate dark refreshing fantasy. Ingredients: Cynar, Averna, Honey, Cinnamon, Lemon Juice, Egg White", name: "Unlucky Italian", image_url: "https://s-media-cache-ak0.pinimg.com/236x/ac/5e/92/ac5e92fa4e875d7c1c88563c22ba14e6.jpg"} ,
 
-    Jack_Rose: { tags: [ 21, 36, 25, 15, 32, 35], description: "Apple Brandy, Lemon Juice, Grenadine", name: "Jack Rose", url: "https://daddyosmartinis.files.wordpress.com/2015/02/jack-rose-cocktail.jpg"},
+    Jack_Rose: { tags: [ 21, 36, 25, 15, 32, 35], description: "A touch of pomegranate to back up apple brandy and citrus. Ingredients: Apple Brandy, Lemon Juice, Grenadine", name: "Jack Rose", image_url: "https://daddyosmartinis.files.wordpress.com/2015/02/jack-rose-cocktail.jpg"},
 
-    Chocolate_Flip: { tags: [36, 15, 21, 24], description: "Dark Rum, Tia Maria, Whole Egg, Sugar", name: "Chocolate Flip", url: "http://punchdrink.com/wp-content/uploads/2016/03/Article-Flip-Cocktail-Ale-Sherry-Brandy-Drinks-History-Recipe-Elephant-Flip-Pouring-Ribbons-Franklin-Bar-Philadelphia-NYC.jpg"},
+    Chocolate_Flip: { tags: [36, 15, 21, 24], description: "An egg in a drink?  You would never know in this deserty and creamy cocktail. Ingredients: Dark Rum, Tia Maria, Whole Egg, Sugar", name: "Chocolate Flip", image_url: "http://punchdrink.com/wp-content/uploads/2016/03/Article-Flip-Cocktail-Ale-Sherry-Brandy-Drinks-History-Recipe-Elephant-Flip-Pouring-Ribbons-Franklin-Bar-Philadelphia-NYC.jpg"},
 
-    Jim_Jam: { tags: [36, 15, 21, 25, 32, 34], description: "Averna, Apry, Lemon Juice", name: "Jim Jam", url: "http://www.miami.com/sites/migration.miami.com/files/images/summerjam.jpg"}
+    Jim_Jam: { tags: [36, 15, 21, 25, 32, 34], description: "Dark and deep stonefruit with a refreshing citrus kick. This is definitely your jam.  Ingredients: Averna, Apry, Lemon Juice", name: "Jim Jam", image_url: "http://www.miami.com/sites/migration.miami.com/files/images/summerjam.jpg"}
 
 }
 
